@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommended Crop</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-image: url('{{ url_for('static', filename='img/' + recommended_crop + '.jpg') }}');
+      background-size: cover; /* Cover the entire viewport */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Do not repeat the background image */
+    }
+
+    header {
+      background-color: #333; /* Dark grey color */
+      color: white;
+      padding: 1em;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    img {
+      max-width: 80%; /* Adjust the size as needed */
+      height: auto;
+      margin-top: 20px;
+      /* Remove border and other styling for the image since it's used as a background */
+    }
+
+    .darkCoffeeBorder {
+      /* Remove border styling since it's used as a background */
+    }
+
+    main {
+      padding: 20px; /* Add padding to the main content */
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+    }
+    .btn-go-to-previous {
+      background-color: #333;
+      border: 1px solid #222;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      margin-top: 10px; /* Adjust margin as needed */
+}
+
+.btn-go-to-previous:hover {
+      background-color: #222;
+      color: #fff;
+      border: 2.5px solid white;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recommended Crop for Cultivation.....</h1>
+  </header>
+
+  <main>
+    <p>{{ recommended_crop }} is the best crop to cultivate here!</p>
+    <!-- Additional elements with dark coffee border -->
+    <h2 class="darkCoffeeBorder">Recommended Crop: {{ recommended_crop }}</h2>
+    <!-- Div with specific styles -->
+    <div></div>
+  </main>
+  <a href="{{ url_for('index') }}" class="btn btn-go-to-previous">Previous</a>
+</body>
+</html>
